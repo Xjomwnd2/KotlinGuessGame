@@ -16,8 +16,7 @@ fun main() {
         } else if (guess > numberToGuess) {
             println("Too high!")
         } else {
-            println("Correct! You guessed the number!")
-            
+            println("Correct! You guessed the number!") 
         }
     } while (guess != numberToGuess)
 }
