@@ -1,22 +1,26 @@
 // src/Main.kt
 
 fun main() {
-    val numberToGuess = (1..100).random()
-    var guess: Int?
-    println("Welcome to Guess the Number!")
-    println("I am thinking of a number between 1 and 100.")
+    val secretNumber = (1..100).random()
+    println("Welcome to Guess The Number!")
+    println("I'm thinking of a number between 1 and 100. Can you guess it?")
 
-    do {
+    while (true) {
         print("Enter your guess: ")
-        guess = readLine()?.toIntOrNull()
+        val guess = readLine()?.toIntOrNull()
+
         if (guess == null) {
-            println("Please enter a valid number.")
-        } else if (guess < numberToGuess) {
-            println("Too low!")
-        } else if (guess > numberToGuess) {
-            println("Too high!")
-        } else {
-            println("Correct! You guessed the number!")
+            println("Please enter a valid number!")
+            continue
         }
-    } while (guess != numberToGuess)
+
+        when {
+            guess < secretNumber -> println("Too low! Try again.")
+            guess > secretNumber -> println("Too high! Try again.")
+            else -> {
+                println("Correct! The number was $secretNumber.")
+                break
+            }
+        }
+    }
 }
