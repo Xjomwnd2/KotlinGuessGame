@@ -3,7 +3,7 @@
 fun main() {
     val numberToGuess = (1..100).random()
     var guess: Int?
-    println("Welcome to Guess the Number!")
+    println("Welcome to Guess Game!")
     println("I am thinking of a number between 1 and 100.")
 
     do {
