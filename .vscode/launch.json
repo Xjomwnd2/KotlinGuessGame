@@ -2,13 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "cppdbg",
+      "name": "Run Kotlin GuessTheNumber",
+      "type": "pwa-node",
       "request": "launch",
-      "name": "Run Kotlin",
-      "program": "java",
-      "args": ["-jar", "Main.jar"],
+      "runtimeExecutable": "java",
+      "args": ["-jar", "build/Main.jar"],
       "preLaunchTask": "Build Kotlin",
-      "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
