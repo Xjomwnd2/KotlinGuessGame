@@ -1,5 +1,13 @@
 // src/Main.kt
 
+fun checkGuess(guess: Int, target: Int): String {
+    return when {
+        guess < target -> "Too low!"
+        guess > target -> "Too high!"
+        else -> "Correct!"
+    }
+}
+
 fun main() {
     val secretNumber = (1..100).random()
     println("Welcome to Guess The Number!")
@@ -14,13 +22,11 @@ fun main() {
             continue
         }
 
-        when {
-            guess < secretNumber -> println("Too low! Try again.")
-            guess > secretNumber -> println("Too high! Try again.")
-            else -> {
-                println("Correct! The number was $secretNumber.")
-                break
-            }
+        val result = checkGuess(guess, secretNumber)
+        println(result)
+
+        if (result == "Correct!") {
+            break
         }
     }
 }
