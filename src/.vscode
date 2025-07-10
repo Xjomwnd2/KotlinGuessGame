@@ -1,0 +1,27 @@
+# Create .vscode directory
+mkdir .vscode
+
+# Create launch.json for run configurations
+@'
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "kotlin",
+            "request": "launch",
+            "name": "Run Main.kt",
+            "mainClass": "MainKt",
+            "projectRoot": "${workspaceFolder}",
+            "sourcePaths": ["${workspaceFolder}/src"]
+        },
+        {
+            "type": "kotlin",
+            "request": "launch",
+            "name": "Run MainTest.kt",
+            "mainClass": "MainTestKt",
+            "projectRoot": "${workspaceFolder}",
+            "sourcePaths": ["${workspaceFolder}/src"]
+        }
+    ]
+}
+'@ | Out-File -FilePath .vscode\launch.json -Encoding utf8
